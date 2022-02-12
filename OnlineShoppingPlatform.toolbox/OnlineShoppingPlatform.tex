@@ -954,19 +954,224 @@
 \@x{\@s{16.4} TLC ,\,}%
 \@x{\@s{16.4} FiniteSets}%
 \@pvspace{16.0pt}%
-\@x{ {\VARIABLES} i ,\, pc}%
+\@x{ {\CONSTANTS}}%
+\@x{\@s{16.4} Shoppers ,\,}%
+\@y{\@s{0}%
+ Set of customers \ensuremath{\sim} \ensuremath{RM} (Resource Manager)
+}%
+\@xx{}%
+\@x{\@s{16.4} Products}%
+\@y{\@s{0}%
+ Set of products (available / unavailable)
+}%
+\@xx{}%
+\@pvspace{16.0pt}%
+\@x{ {\ASSUME}}%
+\@x{\@s{16.4} Cardinality ( Shoppers ) \.{>} 0\@s{8.2} \.{\land}}%
+\@x{\@s{16.4} Cardinality ( Products )\@s{0.88} \.{\geq} 0}%
+\@pvspace{16.0pt}%
+\@x{}%
+\@y{\@s{0}%
+ **** Supporting methods ****
+}%
+\@xx{}%
+ \@x{ IsInjective ( f ) \.{\defeq} \A\, a ,\, b \.{\in} {\DOMAIN} f \.{:} f [
+ a ] \.{=} f [ b ] \.{\implies} a \.{=} b}%
 \@pvspace{8.0pt}%
-\@x{ Init\@s{6.36} \.{\defeq} ( pc \.{=}\@w{start} ) \.{\land} ( i \.{=} 0 )}%
+ \@x{ SetToSeq ( S ) \.{\defeq} {\CHOOSE} f \.{\in} [ 1 \.{\dotdot}
+ Cardinality ( S ) \.{\rightarrow} S ] \.{:} IsInjective ( f )}%
 \@pvspace{8.0pt}%
-\@x{ Pick\@s{3.05} \.{\defeq} \.{\lor} \.{\land} pc \.{=}\@w{start}}%
-\@x{\@s{53.17} \.{\land} i \.{'}\@s{2.87} \.{\in} 0 \.{\dotdot} 1000}%
-\@x{\@s{53.17} \.{\land} pc \.{'} \.{=}\@w{middle}}%
+\@x{}%
+\@y{\@s{0}%
+ {\par}****************************
+}%
+\@xx{}%
 \@pvspace{8.0pt}%
-\@x{ Add1 \.{\defeq} \.{\lor} \.{\land} pc \.{=}\@w{middle}}%
-\@x{\@s{53.17} \.{\land} i \.{'}\@s{2.87} \.{=} i \.{+} 1}%
-\@x{\@s{53.17} \.{\land} pc \.{'} \.{=}\@w{done}}%
+\@x{ Customers \.{\defeq} [ Shoppers \.{\rightarrow} 1 \.{\dotdot} 5 ]}%
+\@y{\@s{0}%
+ The set of all arrays indexed by the elements of \ensuremath{Shoppers}
+ indexed with values from interval denoted by \ensuremath{\.{\dotdot}} where
+ the interval denotes the solvence of the customer
+}%
+\@xx{}%
 \@pvspace{8.0pt}%
-\@x{ Next\@s{2.23} \.{\defeq} Pick \.{\lor} Add1}%
+\@x{ Commodities \.{\defeq} [ Products \.{\rightarrow} 1 \.{\dotdot} 2 ]}%
+\@y{\@s{0}%
+ Index of the products represents individual prices
+}%
+\@xx{}%
+\@pvspace{16.0pt}%
+ \@x{ {\VARIABLES} shopperState ,\, availableProducts ,\, customers ,\,
+ commodities ,\, boughtProducts ,\, commodity ,\, availableProductsSet ,\,
+ availableProductsIndex ,\, bought}%
+\@pvspace{8.0pt}%
+ \@x{ vars \.{\defeq} {\langle} shopperState ,\, availableProducts ,\,
+ customers ,\, commodities ,\, boughtProducts ,\, commodity ,\,
+ availableProductsSet ,\, availableProductsIndex ,\, bought {\rangle}}%
+\@pvspace{8.0pt}%
+\@x{ State \.{\defeq} ( Shoppers )}%
+\@pvspace{8.0pt}%
+\@x{}%
+\@y{\@s{0}%
+ Type Control Invariants
+}%
+\@xx{}%
+\@pvspace{8.0pt}%
+ \@x{ TCTypeOK \.{\defeq} shopperState \.{\in} [ Shoppers \.{\rightarrow}
+ \{\@w{idle} ,\,\@w{browsing} ,\,\@w{selecting} ,\,\@w{ordering}
+ ,\,\@w{shipped} ,\,\@w{served} \} ]}%
+\@pvspace{8.0pt}%
+\@x{\@s{70.45}}%
+\@y{\@s{0}%
+ Global variables
+}%
+\@xx{}%
+ \@x{ TCInint \.{\defeq} \.{\land} shopperState \.{=} [ shopper \.{\in}
+ Shoppers \.{\mapsto}\@w{browsing} ]}%
+\@x{\@s{55.63} \.{\land} customers \.{\in} Customers}%
+\@x{\@s{55.63} \.{\land} commodities \.{\in} Commodities}%
+\@x{\@s{55.63} \.{\land} bought \.{=} \{ \}}%
+\@x{\@s{59.73}}%
+\@y{\@s{0}%
+ Variables for the states of actual shopping activities
+}%
+\@xx{}%
+ \@x{\@s{55.63} \.{\land} availableProductsSet \.{\in} [ Shoppers
+ \.{\rightarrow} {\SUBSET} {\DOMAIN} commodities ]}%
+ \@x{\@s{55.63} \.{\land} availableProducts \.{=} [ shopper \.{\in} Shoppers
+ \.{\mapsto} SetToSeq ( availableProductsSet [ shopper ] ) ]}%
+ \@x{\@s{55.63} \.{\land} availableProductsIndex \.{=} [ shopper \.{\in}
+ Shoppers \.{\mapsto} 1 ]}%
+ \@x{\@s{55.63} \.{\land} boughtProducts \.{=} [ shopper \.{\in} Shoppers
+ \.{\mapsto} \{ \} ]}%
+ \@x{\@s{55.63} \.{\land} commodity \.{=} [ shopper \.{\in} State \.{\mapsto}
+ 0 ]}%
+\@pvspace{16.0pt}%
+\@x{}%
+\@y{\@s{0}%
+ Shopper is on the web page and selects its \ensuremath{product(s)
+}}%
+\@xx{}%
+ \@x{ ProductsBrowsing ( shopper ) \.{\defeq} \.{\land} shopperState [ shopper
+ ] \.{=}\@w{browsing}}%
+ \@x{\@s{138.92} \.{\land} shopperState \.{'} \.{=} [ shopperState {\EXCEPT}
+ {\bang} [ shopper ] \.{=}\@w{browsing} ]}%
+\@y{\@s{0}%
+ All other shoppers keep their states
+}%
+\@xx{}%
+ \@x{\@s{138.92} \.{\land} {\UNCHANGED} {\langle} customers ,\, commodities
+ ,\, boughtProducts ,\, availableProducts ,\, availableProductsIndex ,\,
+ availableProductsSet ,\, commodity ,\, bought {\rangle}}%
+\@pvspace{16.0pt}%
+\@x{}%
+\@y{\@s{0}%
+ Shopper tries to select the product (add to basket)
+}%
+\@xx{}%
+ \@x{ ProductSelection ( shopper ) \.{\defeq} \.{\land} shopperState [ shopper
+ ] \.{=}\@w{selecting}}%
+ \@x{\@s{133.42} \.{\land} {\IF} availableProductsIndex [ shopper ] \.{\leq}
+ Len ( availableProducts [ shopper ] )}%
+ \@x{\@s{144.53} \.{\THEN} \.{\land} commodity \.{'} \.{=} [ commodity
+ {\EXCEPT} {\bang} [ shopper ] \.{=} availableProducts [ shopper ] [
+ availableProductsIndex [ shopper ] ] ]}%
+\@x{\@s{175.84} \.{\land} {\IF} commodity [ shopper ] \.{\in} bought}%
+\@x{\@s{186.95} \.{\THEN} \.{\land} {\FALSE}}%
+ \@x{\@s{186.95} \.{\ELSE} \.{\land} shopperState \.{'} \.{=} [ shopperState
+ {\EXCEPT} {\bang} [ shopper ] \.{=}\@w{ordering} ]}%
+ \@x{\@s{144.53} \.{\ELSE} \.{\land} shopperState \.{'} \.{=} [ shopperState
+ {\EXCEPT} {\bang} [ shopper ] \.{=}\@w{served} ]}%
+\@x{\@s{175.84} \.{\land} {\UNCHANGED} commodity}%
+ \@x{\@s{133.42} \.{\land} {\UNCHANGED} {\langle} customers ,\, commodities
+ ,\, boughtProducts ,\, availableProducts ,\, availableProductsIndex ,\,
+ availableProductsSet ,\, bought {\rangle}}%
+\@pvspace{8.0pt}%
+\@x{}%
+\@y{\@s{0}%
+ Shopper procceds to the basket finalize the order
+}%
+\@xx{}%
+ \@x{ ProductOrdering ( shopper ) \.{\defeq} \.{\land} shopperState [ shopper
+ ] \.{=}\@w{ordering}}%
+ \@x{\@s{133.54} \.{\land} {\IF} commodities [ commodities [ shopper ] ]
+ \.{\leq} customers [ shopper ]}%
+ \@x{\@s{144.65} \.{\THEN} \.{\land} customers \.{'} \.{=} [ customers
+ {\EXCEPT} {\bang} [ shopper ] \.{=} customers [ shopper ] \.{-} commodities
+ [ commodity [ shopper ] ] ]}%
+ \@x{\@s{175.96} \.{\land} boughtProducts \.{'} \.{=} [ boughtProducts
+ {\EXCEPT} {\bang} [ shopper ] \.{=} boughtProducts [ shopper ] \.{\cup} \{
+ commodities [ shopper ] \} ]}%
+ \@x{\@s{175.96} \.{\land} bought \.{'} \.{=} ( bought \.{\cup} commodities [
+ shopper ] )}%
+\@x{\@s{144.65} \.{\ELSE} \.{\land} {\TRUE}}%
+ \@x{\@s{175.96} \.{\land} {\UNCHANGED} {\langle} customers ,\, bought ,\,
+ boughtProducts {\rangle}}%
+ \@x{\@s{133.54} \.{\land} shopperState \.{'} \.{=} [ shopperState {\EXCEPT}
+ {\bang} [ shopper ] \.{=}\@w{selecting} ]}%
+ \@x{\@s{133.54} \.{\land} {\UNCHANGED} {\langle} commodities ,\,
+ availableProducts ,\, availableProductsIndex ,\, availableProductsSet ,\,
+ commodity {\rangle}}%
+\@pvspace{8.0pt}%
+\@x{}%
+\@y{\@s{0}%
+ Shopper ordered product and specifies shippment
+}%
+\@xx{}%
+ \@x{ ProductShipping ( shopper ) \.{\defeq} \.{\land} shopperState [ shopper
+ ] \.{=}\@w{shipping}}%
+ \@x{\@s{132.26} \.{\land} shopperState \.{'} \.{=} [ shopperState {\EXCEPT}
+ {\bang} [ shopper ] \.{=}\@w{served} ]}%
+ \@x{\@s{132.26} \.{\land} {\UNCHANGED} {\langle} availableProducts ,\,
+ customers ,\, commodities ,\, boughtProducts ,\, commodity ,\,
+ availableProductsSet ,\, availableProductsIndex ,\, bought {\rangle}}%
+\@pvspace{16.0pt}%
+\@x{}%
+\@y{\@s{0}%
+ Shopper does not do anything at all \ensuremath{\.{-} TODO}: Integrate this
+ state
+}%
+\@xx{}%
+\@pvspace{8.0pt}%
+ \@x{ NonActive ( shopper ) \.{\defeq} \.{\land} shopperState [ shopper ]
+ \.{=}\@w{idle}}%
+ \@x{\@s{106.61} \.{\land} ( shopperState \.{'} \.{=} [ shopperState {\EXCEPT}
+ {\bang} [ shopper ] \.{=}\@w{served} ] \.{\lor} shopperState \.{'} \.{=} [
+ shopperState {\EXCEPT} {\bang} [ shopper ] \.{=}\@w{browsing} ] )}%
+ \@x{\@s{106.61} \.{\land} {\UNCHANGED} {\langle} availableProducts ,\,
+ customers ,\, commodities ,\, boughtProducts ,\, commodity ,\,
+ availableProductsSet ,\, availableProductsIndex ,\, bought {\rangle}}%
+\@pvspace{8.0pt}%
+\@x{}%
+\@y{\@s{0}%
+ State \ensuremath{Automat} formula of the Online Store
+}%
+\@xx{}%
+ \@x{ OnlineShopping ( shopper ) \.{\defeq} \.{\land} ProductsBrowsing (
+ shopper )}%
+\@x{\@s{129.95} \.{\lor} ProductSelection ( shopper )}%
+\@x{\@s{129.95} \.{\lor} ProductOrdering ( shopper )}%
+\@x{\@s{129.95} \.{\lor} ProductShipping ( shopper )}%
+\@pvspace{16.0pt}%
+\@x{}%
+\@y{\@s{0}%
+ TERMINATION ASSERTIONS
+}%
+\@xx{}%
+\@pvspace{8.0pt}%
+ \@x{ Terminating \.{\defeq} \.{\land} ( \A\, shopper \.{\in} State \.{:}
+ shopperState [ shopper ] \.{=}\@w{served} )}%
+\@x{\@s{73.56} \.{\land} {\UNCHANGED} vars}%
+\@pvspace{8.0pt}%
+ \@x{ Next \.{\defeq} ( \E\, shopper \.{\in} Shoppers \.{:} OnlineShopping (
+ shopper ) )}%
+\@x{\@s{39.83} \.{\lor} Terminating}%
+\@pvspace{8.0pt}%
+\@x{ Spec\@s{1.46} \.{\defeq} TCInint \.{\land} {\Box} [ Next ]_{ vars}}%
+\@pvspace{8.0pt}%
+ \@x{ Termination \.{\defeq} {\Diamond} ( \A\, shopper \.{\in} State \.{:}
+ shopperState [ shopper ] \.{=}\@w{served} \.{\lor} shopperState [ shopper ]
+ \.{=}\@w{browsing} )}%
 \@pvspace{8.0pt}%
 \@x{}\bottombar\@xx{}%
 \end{document}

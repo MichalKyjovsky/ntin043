@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.8)  8 FEB 2022 22:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.8)  12 FEB 2022 11:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -118,32 +118,163 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 94
 2.
 (C:\Users\micha\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) [1
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 961.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 961.
 
-{C:/Users/micha/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (OnlineShopp
-ingPlatform.aux) ) 
+Overfull \hbox (401.86563pt too wide) in paragraph at lines 990--997
+[][][][] 
+ []
+
+
+Overfull \hbox (301.45497pt too wide) in paragraph at lines 1006--1007
+[][] 
+ []
+
+
+Overfull \hbox (295.53677pt too wide) in paragraph at lines 1010--1011
+[][] 
+ []
+
+
+Overfull \hbox (117.91243pt too wide) in paragraph at lines 1022--1023
+[][] 
+ []
+
+
+Overfull \hbox (80.29408pt too wide) in paragraph at lines 1042--1044
+[][] 
+ []
+
+[1
+
+{C:/Users/micha/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Overfull \hbox (206.45656pt too wide) in paragraph at lines 1058--1065
+[][][][] 
+ []
+
+
+Overfull \hbox (404.75172pt too wide) in paragraph at lines 1065--1066
+[][] 
+ []
+
+
+Overfull \hbox (89.11844pt too wide) in paragraph at lines 1075--1078
+[][] 
+ []
+
+
+Overfull \hbox (302.95866pt too wide) in paragraph at lines 1078--1079
+[][] 
+ []
+
+
+Overfull \hbox (145.31917pt too wide) in paragraph at lines 1082--1084
+[][] 
+ []
+
+
+Overfull \hbox (95.09358pt too wide) in paragraph at lines 1084--1085
+[][] 
+ []
+
+
+Overfull \hbox (345.74518pt too wide) in paragraph at lines 1088--1089
+[][] 
+ []
+
+
+Overfull \hbox (47.4924pt too wide) in paragraph at lines 1098--1101
+[][] 
+ []
+
+
+Overfull \hbox (279.68575pt too wide) in paragraph at lines 1101--1104
+[][] 
+ []
+
+
+Overfull \hbox (300.43875pt too wide) in paragraph at lines 1104--1106
+[][] 
+ []
+
+
+Overfull \hbox (12.89761pt too wide) in paragraph at lines 1106--1107
+[][] 
+ []
+
+
+Overfull \hbox (44.5988pt too wide) in paragraph at lines 1109--1111
+[][] 
+ []
+
+
+Overfull \hbox (62.59818pt too wide) in paragraph at lines 1111--1114
+[][] 
+ []
+
+
+Overfull \hbox (242.09935pt too wide) in paragraph at lines 1114--1115
+[][] 
+ []
+
+
+Overfull \hbox (51.51265pt too wide) in paragraph at lines 1124--1127
+[][] 
+ []
+
+
+Overfull \hbox (398.09172pt too wide) in paragraph at lines 1127--1128
+[][] 
+ []
+
+
+Overfull \hbox (323.22647pt too wide) in paragraph at lines 1140--1143
+[][] 
+ []
+
+
+Overfull \hbox (372.44173pt too wide) in paragraph at lines 1143--1144
+[][] 
+ []
+
+[2]
+Overfull \hbox (125.20905pt too wide) in paragraph at lines 1174--1175
+[][] 
+ []
+
+[3] (OnlineShoppingPlatform.aux) ) 
 Here is how much of TeX's memory you used:
- 1336 strings out of 478659
- 20522 string characters out of 2845921
- 323137 words of memory out of 3000000
- 19486 multiletter control sequences out of 15000+600000
- 406163 words of font info for 38 fonts, out of 8000000 for 9000
+ 1355 strings out of 478659
+ 20710 string characters out of 2845921
+ 340137 words of memory out of 3000000
+ 19497 multiletter control sequences out of 15000+600000
+ 408600 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,10n,38p,205b,114s stack positions out of 5000i,500n,10000p,200000b,80000s
-<C:/Users/micha/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmcsc10.pfb><C:/Users/micha/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/micha/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/micha/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/micha/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/micha/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/m
-icha/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
-:/Users/micha/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
-7.pfb><C:/Users/micha/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmti10.pfb>
-Output written on OnlineShoppingPlatform.pdf (1 page, 92857 bytes).
+ 34i,10n,38p,205b,140s stack positions out of 5000i,500n,10000p,200000b,80000s
+<C:/Users/micha/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/micha/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/micha/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/micha/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/
+micha/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:
+/Users/micha/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.
+pfb><C:/Users/micha/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmr9.pfb><C:/Users/micha/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmss10.pfb><C:/Users/micha/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb><C:/Users/micha/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/micha/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/micha/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/micha/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti7.pfb><C:/Users/micha/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users
+/micha/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lasy1
+0.pfb>
+Output written on OnlineShoppingPlatform.pdf (3 pages, 170911 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
+ 87 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
